@@ -122,6 +122,10 @@
   background: none;
 }
 
+.wd-grid-col-left {
+  float: left;
+}
+
 .grid-col-left-A {
   width: 85%;
   float: left;
@@ -144,4 +148,7 @@
 }
 .wd-align-right {
   align-items: right;
+}
+.wd-no-underline {
+  text-decoration: none;
 }
