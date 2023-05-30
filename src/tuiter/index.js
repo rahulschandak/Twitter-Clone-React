@@ -1,13 +1,49 @@
-import { Link } from "react-router-dom";
+import { Routes, Route } from "react-router";
 import Nav from "../nav";
+import NavigationSidebar from "./navigation-sidebar";
+import HomeScreen from "./home-screen";
+import ExploreScreen from "./explore-screen/index";
+import BookmarksScreen from "./bookmarks-screen";
+import ProfileScreen from "./profile-screen";
+import WhoToFollowListItem from "./who-to-follow-list/who-to-follow-list-item";
+
 function Tuiter() {
   return (
     <div>
-      {/* <Link to="/labs/a3">A3</Link> |
-      <Link to="/hello">Hello</Link> |
-      <Link to="/tuiter">Tuiter</Link> */}
       <Nav />
-      <h1>Tuiter</h1>
+      <div className="row">
+        <div className="col-2">
+          <NavigationSidebar />
+        </div>
+        <div className="col-7">
+          <Routes>
+            <Route path="/home" element={<h1>Home</h1>} />
+            <Route path="/explore" element={<ExploreScreen />} />
+            <Route path="/notifications" element={<h1>Notifications</h1>} />
+            <Route path="/home" element={<HomeScreen />} />
+            <Route path="/explore" element={<ExploreScreen />} />
+            <Route path="/bookmarks" element={<BookmarksScreen />} />
+            <Route path="/profile" element={<ProfileScreen />} />
+          </Routes>
+        </div>
+        <div className="col-3">
+          <WhoToFollowListItem />
+          {/*<WhoToFollowListItem
+            who={{
+              userName: "Tesla",
+              handle: "tesla",
+              avatarIcon: "C.png",
+            }}
+          />
+          <WhoToFollowListItem
+            who={{
+              userName: "SpaceX",
+              handle: "spacex",
+              avatarIcon: "ProfilePic.jpeg",
+            }}
+          /> */}
+        </div>
+      </div>
     </div>
   );
 }
