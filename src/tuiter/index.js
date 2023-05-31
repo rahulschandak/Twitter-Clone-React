@@ -7,16 +7,27 @@ import BookmarksScreen from "./bookmarks-screen";
 import ProfileScreen from "./profile-screen";
 import WhoToFollowListItem from "./who-to-follow-list/who-to-follow-list-item";
 import WhoToFollowList from "./who-to-follow-list";
+import "bootstrap/dist/css/bootstrap.min.css"; 
+
 
 function Tuiter() {
   return (
     <div>
       <Nav />
       <div className="row">
-        <div className="col-2">
+        {/* Left Column XL, XXL */}
+        {/* <div class="col-2 d-none d-xl-block"> */}
+        <div class="col-2">
           <NavigationSidebar />
         </div>
-        <div className="col-7">
+
+        {/* Left Column S, M, L
+        <div class="col-1 d-block d-xl-none">
+          <NavigationSidebar />
+        </div> */}
+
+        {/* Middle Column L, XL, XXL */}
+        <div class="d-block col-10 col-sm-10 col-lg-6 col-xl-6 wd-float-left mt-2 wd px-2">
           <Routes>
             <Route path="/home" element={<h1>Home</h1>} />
             <Route path="/explore" element={<ExploreScreen />} />
@@ -27,7 +38,9 @@ function Tuiter() {
             <Route path="/profile" element={<ProfileScreen />} />
           </Routes>
         </div>
-        <div className="col-3">
+
+        {/* Right Column XL, XXL */}
+        <div class="col-sm-0 col-md-0 col-lg-4 col-xl-3 col-xxl-3 d-xxl block d-xl-block d-lg-block d-md-block d-md-none d-sm-none d-none">
           {/* <WhoToFollowListItem /> */}
           <WhoToFollowList />
           {/*<WhoToFollowListItem
