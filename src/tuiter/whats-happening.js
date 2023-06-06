@@ -1,12 +1,7 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChartSimple,
-  faFaceSmile,
-  faFile,
-  faImage,
-  faLocationDot,
-} from "@fortawesome/free-solid-svg-icons";
+import { AiOutlineBarChart, AiOutlineBars, AiOutlineFileGif, AiOutlinePicture } from 'react-icons/ai';
+import { BsEmojiSmile } from 'react-icons/bs';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { createTuit } from "./reducers/tuits-reducer";
 import { useDispatch } from "react-redux";
 
@@ -27,7 +22,7 @@ const WhatsHappening = () => {
       <div className="col-auto">
         <img src="/images/nasa.png" width={60} />
       </div>
-      <div className="col-9">
+      <div className="col-9 col-xxl-10">
         <textarea
           value={whatsHappening}
           placeholder="What's happening?"
@@ -42,28 +37,12 @@ const WhatsHappening = () => {
             Tuit
           </button>
           <div className="text-primary fs-2">
-            <span class="d-flex justify-content-around">
-              <span>
-                <FontAwesomeIcon icon={faImage} />
-              </span>
-
-              <span>
-                <FontAwesomeIcon icon={faFile} />
-              </span>
-
-              <span>
-                <FontAwesomeIcon icon={faChartSimple} />
-              </span>
-
-              <span>
-                <FontAwesomeIcon icon={faFaceSmile} />
-              </span>
-
-              <span>
-                <FontAwesomeIcon icon={faLocationDot} />
-              </span>
-            </span>
-          </div>
+           <AiOutlinePicture className="me-3"/>
+           <AiOutlineFileGif className="me-3"/>
+           <AiOutlineBarChart className="me-3"/>
+           <BsEmojiSmile className="me-3"/>
+           <HiOutlineLocationMarker className="me-3"/>
+         </div>
         </div>
       </div>
       <div className="col-12">
