@@ -34,9 +34,23 @@ const tuitsSlice = createSlice({
         _id: new Date().getTime(),
       });
     },
+    toggleLikes(state, action) {
+      const tuitId = action.payload;
+      const tuit = state.tuits.find((tuit) => tuit._id === tuitId);
+
+      if (tuit) {
+        if (tuit.liked) {   // If already liked, after clicking reduce the count
+          tuit.likes--;
+        } else {
+          tuit.likes++;
+        }
+
+        tuit.liked = !tuit.liked;   //Change value of tuit.liked from true to false and vice versa
+      }
+    },
   },
 });
 
-export const { createTuit, deleteTuit } = tuitsSlice.actions;
+export const { createTuit, deleteTuit, toggleLikes } = tuitsSlice.actions;
 
 export default tuitsSlice.reducer;
