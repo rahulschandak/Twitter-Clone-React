@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,6 +12,8 @@ import {
   faList,
   faEllipsis,
   faUser,
+  faRegistered,
+  faNewspaper,
 } from "@fortawesome/free-solid-svg-icons";
 // import "./index.css";
 
@@ -24,9 +27,10 @@ const NavigationSidebar = () => {
     { name: "messages", icon: faEnvelope },
     { name: "bookmarks", icon: faBookmark },
     { name: "lists", icon: faList },
-    { name: "profile", icon: faUser },
     { name: "more", icon: faEllipsis },
   ];
+  const { currentUser } = useSelector((state) => state.user);
+
   return (
     <div class="container">
       <div className="d-none d-xl-block list-group">
@@ -41,6 +45,45 @@ const NavigationSidebar = () => {
             {link.name}
           </Link>
         ))}
+        {!currentUser && (
+          <Link
+            to={`/tuiter/login`}
+            className={`list-group-item text-capitalize ${
+              active === "login" ? "active" : ""
+            }`}
+          >
+            <FontAwesomeIcon
+              icon={faHashtag}
+              style={{ paddingRight: "10px" }}
+            />
+            Login
+          </Link>
+        )}
+        {!currentUser && (
+          <Link
+            to={`/tuiter/register`}
+            className={`list-group-item text-capitalize ${
+              active === "register" ? "active" : ""
+            }`}
+          >
+            <FontAwesomeIcon
+              icon={faNewspaper}
+              style={{ paddingRight: "10px" }}
+            />
+            Register
+          </Link>
+        )}
+        {currentUser && (
+          <Link
+            to={`/tuiter/profile`}
+            className={`list-group-item text-capitalize ${
+              active === "profile" ? "active" : ""
+            }`}
+          >
+            <FontAwesomeIcon icon={faUser} style={{ paddingRight: "10px" }} />
+            Profile
+          </Link>
+        )}
       </div>
 
       <div className="d-block d-xl-none list-group">
@@ -55,6 +98,42 @@ const NavigationSidebar = () => {
             {/* {link.name} */}
           </Link>
         ))}
+        {!currentUser && (
+          <Link
+            to={`/tuiter/login`}
+            className={`list-group-item text-capitalize ${
+              active === "login" ? "active" : ""
+            }`}
+          >
+            <FontAwesomeIcon
+              icon={faHashtag}
+              style={{ paddingRight: "10px" }}
+            />
+          </Link>
+        )}
+        {!currentUser && (
+          <Link
+            to={`/tuiter/register`}
+            className={`list-group-item text-capitalize ${
+              active === "register" ? "active" : ""
+            }`}
+          >
+            <FontAwesomeIcon
+              icon={faNewspaper}
+              style={{ paddingRight: "10px" }}
+            />
+          </Link>
+        )}
+        {currentUser && (
+          <Link
+            to={`/tuiter/profile`}
+            className={`list-group-item text-capitalize ${
+              active === "profile" ? "active" : ""
+            }`}
+          >
+            <FontAwesomeIcon icon={faUser} />
+          </Link>
+        )}
       </div>
     </div>
   );
