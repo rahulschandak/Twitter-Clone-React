@@ -18,6 +18,9 @@ import {
 // import "./index.css";
 
 const NavigationSidebar = () => {
+  const { currentUser } = useSelector((state) => state.user);
+  console.log("Nav Bar");
+  console.log(currentUser);
   const { pathname } = useLocation();
   const [ignore, tuiter, active] = pathname.split("/");
   const links = [
@@ -29,7 +32,6 @@ const NavigationSidebar = () => {
     { name: "lists", icon: faList },
     { name: "more", icon: faEllipsis },
   ];
-  const { currentUser } = useSelector((state) => state.user);
 
   return (
     <div class="container">
