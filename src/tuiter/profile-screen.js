@@ -69,6 +69,7 @@ function ProfileScreen() {
       <button className="m-2 btn btn-primary"
         onClick={() => {
           dispatch(logoutThunk());
+          // sessionStorage.removeItem(currentUser);
           navigate("/tuiter/login");
         }}
       >

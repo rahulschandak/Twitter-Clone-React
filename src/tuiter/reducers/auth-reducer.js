@@ -9,22 +9,23 @@ const authSlice = createSlice({
     [loginThunk.fulfilled]: (state, { payload }) => {
       state.currentUser = payload;
     },
+    [logoutThunk.fulfilled]: (state) => {
+      state.currentUser = null;
+    },
+    [profileThunk.fulfilled]: (state, { payload }) => {
+      state.currentUser = payload;
+    },
+    [profileThunk.rejected]: (state, { payload }) => {
+      state.currentUser = null;
+    },
+    [profileThunk.pending]: (state, action) => {
+      state.currentUser = null;
+    },
+    [updateUserThunk.fulfilled]: (state, { payload }) => {
+      state.currentUser = payload;
+    },
+    [registerThunk.fulfilled]: (state, { payload }) => {},
+  
   },
-  [logoutThunk.fulfilled]: (state) => {
-    state.currentUser = null;
-  },
-  [profileThunk.fulfilled]: (state, { payload }) => {
-    state.currentUser = payload;
-  },
-  [profileThunk.rejected]: (state, { payload }) => {
-    state.currentUser = null;
-  },
-  [profileThunk.pending]: (state, action) => {
-    state.currentUser = null;
-  },
-  [updateUserThunk.fulfilled]: (state, { payload }) => {
-    state.currentUser = payload;
-  },
-  [registerThunk.fulfilled]: (state, { payload }) => {},
 });
 export default authSlice.reducer;

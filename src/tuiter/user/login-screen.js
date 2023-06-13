@@ -12,9 +12,6 @@ function LoginScreen() {
   const handleLogin = async () => {
     try {
       const user = await dispatch(loginThunk({ username, password }));
-      console.log(username);
-      console.log(password);
-      console.log(user.payload);
       if (user.payload) navigate("/tuiter/profile");
       else {
         toast.error("Username does not exist.", {
