@@ -31,15 +31,15 @@ export const register = async ({
   password,
   firstName,
   lastName,
-  _id,
+  // _id,
 }) => {
-  console.log("register" + username + password + firstName + lastName + _id);
+  // console.log("register" + username + password + firstName + lastName + _id);
   const response = await api.post(`${USERS_URL}/register`, {
     username,
     password,
     firstName,
     lastName,
-    _id,
+    // _id,
   });
   const user = response.data.user;
   // const user = response.data;
