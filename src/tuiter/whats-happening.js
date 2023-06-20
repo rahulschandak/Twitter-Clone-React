@@ -18,7 +18,7 @@ const WhatsHappening = () => {
     // console.log(whatsHappening);
     const newTuit = {
       topic: "New Tweet",
-      username: "newTweet",
+      userName: "newTweet",
       handle: "@newTweet",
       time: "0h",
       image: "nasa.png",
