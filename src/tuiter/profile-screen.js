@@ -12,9 +12,9 @@ function ProfileScreen() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   
-  console.log("Profile screen");
-  console.log(currentUser);
-  console.log(profile);
+  // console.log("Profile screen");
+  // console.log(currentUser);
+  // console.log(profile);
 
   const save = () => {
     dispatch(updateUserThunk(profile));

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   AiOutlineBarChart,
   AiOutlineBars,
@@ -7,9 +7,9 @@ import {
 } from "react-icons/ai";
 import { BsEmojiSmile } from "react-icons/bs";
 import { HiOutlineLocationMarker } from "react-icons/hi";
-import { createTuit } from "./reducers/tuits-reducer";
-import { useDispatch } from "react-redux";
 import { createTuitThunk } from "./services/tuits-thunks";
+import { useSelector, useDispatch } from "react-redux";
+import { profileThunk } from "./services/auth-thunks";
 
 const WhatsHappening = () => {
   let [whatsHappening, setWhatsHappening] = useState("");
