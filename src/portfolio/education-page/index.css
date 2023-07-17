@@ -1,0 +1,77 @@
+/* EducationPage.css */
+.education-heading {
+  font-family: "Times New Roman", serif;
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: white;
+}
+
+.school-font {
+  font-family: "Times New Roman", serif;
+  font-size: 25px;
+  font-style: italic;
+}
+
+.degree-font {
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+}
+
+.card {
+  background-color: #f8f9fa;
+  border-color: #e9ecef;
+}
+
+.card-title {
+  color: black;
+}
+
+.card-text {
+  color: black;
+}
+
+.degree-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wd-background-card {
+  background-color: moccasin;
+  width: 44%;
+  margin: 2%;
+}
+
+.wd-margin-right {
+  margin-right: 4%;
+}
+
+.wd-padding-card-image {
+  padding: 3%;
+}
+
+.wd-card-bordered1 {
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-left: 1px solid #000000;
+}
+
+.wd-card-bordered2 {
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-left: 1px solid #000000;
+}
+
+.wd-transcript-font {
+  font-size: 10px;
+}
+
+.wd-transcript-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.wd-transcript-link {
+  text-align: right;
+}

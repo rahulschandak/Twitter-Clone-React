@@ -1,0 +1,73 @@
+.contact-heading {
+  font-family: "Times New Roman", serif;
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: white;
+  padding-bottom: 2%;
+}
+
+.wd-background6 {
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+  background-color: moccasin;
+  /* border-radius: 20px; */
+  padding: 2%
+}
+
+.wd-name-info {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+.wd-name-info .form-label {
+  flex-basis: 30%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wd-two-cols {
+  display: flex;
+}
+
+.wd-width1 {
+  width: 40%;
+  margin-right: 5%;
+}
+
+.wd-width2 {
+  width: 60%;
+  /* padding: 1%; */
+}
+
+.wd-border-1 {
+  border: solid 1px;
+  margin-bottom: 2%;
+}
+
+.wd-padding-5 {
+  padding: 5%;
+}
+
+.wd-btn-properties {
+  background-color: black;
+  border: solid 1px;
+  color: white;
+}
+
+.wd-btn-properties:hover {
+  border-color: black; /* Add a border color for hover state */
+}
+
+.circle-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e9e9e9;
+}

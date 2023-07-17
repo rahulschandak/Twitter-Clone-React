@@ -1,0 +1,35 @@
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.wd-typewriter-label {
+  overflow: hidden; /* Ensure that text does not overflow */
+  white-space: nowrap; /* Prevent line breaks */
+  animation: typewriter 1.5s steps(40) 1s infinite alternate;
+}
+
+.resume-heading {
+  font-family: "Times New Roman", serif;
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-bottom: 2%;
+  color: white;
+}
+
+.resume-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wd-button-properties {
+    padding: 2%;
+    border-radius: 25px;
+    font-family: "Times New Roman", serif;
+    background-color: moccasin;
+}
