@@ -16,6 +16,7 @@ const TuitsStats = ({ tuit }) => {
   const toggleLikeHandler = (id) => {
     dispatch(toggleLikes(id));
   };
+
   return (
     <span class="d-flex justify-content-around">
       <span>
@@ -25,28 +26,65 @@ const TuitsStats = ({ tuit }) => {
         <FontAwesomeIcon icon={faRetweet} /> &nbsp; {tuit.retuits}
       </span>
       <span>
-        {" "}
-        <FontAwesomeIcon
-          style={{ color: "red" }}
-          icon={faHeart}
-          onClick={() =>
-            dispatch(
-              updateTuitThunk({ ...tuit, likes: tuit.likes + 1, liked: true })
-            )
-          }
-        />
+        {tuit.liked ? (
+          <FontAwesomeIcon
+            style={{ color: "red" }}
+            icon={faHeart}
+            onClick={() =>
+              dispatch(
+                updateTuitThunk({
+                  ...tuit,
+                  likes: tuit.likes - 1,
+                  liked: !tuit.liked,
+                })
+              )
+            }
+          />
+        ) : (
+          <FontAwesomeIcon
+            icon={faHeart}
+            onClick={() =>
+              dispatch(
+                updateTuitThunk({
+                  ...tuit,
+                  likes: tuit.likes + 1,
+                  liked: !tuit.liked,
+                })
+              )
+            }
+          />
+        )}
         &nbsp;{tuit.likes}
       </span>
       <span>
-        {" "}
-        <FontAwesomeIcon
-          icon={faThumbsDown}
-          onClick={() =>
-            dispatch(
-              updateTuitThunk({ ...tuit, dislikes: tuit.dislikes + 1})
-            )
-          }
-        />
+        {tuit.disliked ? (
+          <FontAwesomeIcon
+            style={{ color: "blue" }}
+            icon={faThumbsDown}
+            onClick={() =>
+              dispatch(
+                updateTuitThunk({
+                  ...tuit,
+                  dislikes: tuit.dislikes - 1,
+                  disliked: !tuit.disliked,
+                })
+              )
+            }
+          />
+        ) : (
+          <FontAwesomeIcon
+            icon={faThumbsDown}
+            onClick={() =>
+              dispatch(
+                updateTuitThunk({
+                  ...tuit,
+                  dislikes: tuit.dislikes + 1,
+                  disliked: !tuit.disliked,
+                })
+              )
+            }
+          />
+        )}
         &nbsp;{tuit.dislikes}
       </span>
       <span>

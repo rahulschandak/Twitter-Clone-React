@@ -11,19 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.wd-border  {
-  border-style: solid;
-}
-
-.wd-padding {
-  /* padding: 10px; */
-}
-
-.wd-background {
-  background-color: #f6dfba;
-}
-
-.wd-background2 {
-  background-color: black;
-}
